@@ -1,13 +1,13 @@
-import { View, Text, StyleSheet, FlatList } from "react-native";
+import { View } from "react-native";
+
+import ExpensesList from "./ExpensesList";
+import ExpensesSummary from "./ExpensesSummary";
 
 function ExpensesOutput({ expenses }) {
   return (
     <View>
-      <View>
-        <Text>Last 7 Days</Text>
-        <Text>RM99.99</Text>
-      </View>
-      <FlatList />
+      <ExpensesSummary />
+      <ExpensesList />
     </View>
   );
 }
