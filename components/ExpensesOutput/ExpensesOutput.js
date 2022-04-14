@@ -7,6 +7,7 @@ function ExpensesOutput({ expenses }) {
         <Text>Last 7 Days</Text>
         <Text>RM99.99</Text>
       </View>
+      <FlatList />
     </View>
   );
 }
