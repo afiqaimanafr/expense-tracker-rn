@@ -1,5 +1,8 @@
 import { useLayoutEffect } from "react";
-import { Text } from "react-native";
+import { View } from "react-native";
+
+import IconButton from "../components/ui/IconButton";
+import { GlobalStyles } from "../constants/styles";
 
 function ManageExpense({ route, navigation }) {
   const editedExpenseId = route.params?.expenseId;
@@ -11,7 +14,20 @@ function ManageExpense({ route, navigation }) {
     });
   }, [navigation, isEditing]);
 
-  return <Text>Manage Expense Screen!</Text>;
+  function deleteExpenseHandler() {}
+
+  return (
+    <View>
+      {isEditing && (
+        <IconButton
+          icon="trash"
+          color={GlobalStyles.colors.error500}
+          size={36}
+          onPress={deleteExpenseHandler}
+        />
+      )}
+    </View>
+  );
 }
 
 export default ManageExpense;
