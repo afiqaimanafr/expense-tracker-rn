@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useReducer } from "react";
 
 export const ExpensesContext = createContext({
   expenses: [],
@@ -6,3 +6,21 @@ export const ExpensesContext = createContext({
   deleteExpense: (id) => {},
   updateExpense: (id, { description, amount, date }) => {},
 });
+
+function expensesReducer(state, action) {
+  switch (action.type) {
+    case "ADD":
+    case "UPDATE":
+    case "DELETE":
+    default:
+      return state;
+  }
+}
+
+function ExpensesContextProvider({ children }) {
+  useReducer();
+
+  return <ExpensesContext.Provider>{children}</ExpensesContext.Provider>;
+}
+
+export default ExpensesContextProvider;
