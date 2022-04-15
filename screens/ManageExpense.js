@@ -1,7 +1,7 @@
 import { useLayoutEffect } from "react";
 import { View, StyleSheet } from "react-native";
 
-import IconButton from "../components/ui/IconButton";
+import IconButton from "../components/UI/IconButton";
 import { GlobalStyles } from "../constants/styles";
 
 function ManageExpense({ route, navigation }) {
