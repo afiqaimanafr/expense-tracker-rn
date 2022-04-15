@@ -14,7 +14,9 @@ function RecentExpenses() {
     return expense.date > date7DaysAgo;
   });
 
-  return <ExpensesOutput expensesPeriod="Last 7 Days" />;
+  return (
+    <ExpensesOutput expenses={recentExpenses} expensesPeriod="Last 7 Days" />
+  );
 }
 
 export default RecentExpenses;
