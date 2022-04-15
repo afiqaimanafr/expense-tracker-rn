@@ -27,6 +27,19 @@ function ManageExpense({ route, navigation }) {
   }
 
   function confirmHandler() {
+    if (isEditing) {
+      expensesCtx.updateExpense({
+        description: "McD 2x",
+        amount: 29.99,
+        date: new Date("2022-04-13"),
+      });
+    } else {
+      expensesCtx.addExpense({
+        description: "McD",
+        amount: 19.99,
+        date: new Date("2022-04-15"),
+      });
+    }
     navigation.goBack();
   }
 
