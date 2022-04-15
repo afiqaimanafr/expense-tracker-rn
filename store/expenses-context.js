@@ -18,7 +18,7 @@ function expensesReducer(state, action) {
 }
 
 function ExpensesContextProvider({ children }) {
-  useReducer();
+  const [expensesState, dispatch] = useReducer(expensesReducer);
 
   return <ExpensesContext.Provider>{children}</ExpensesContext.Provider>;
 }
