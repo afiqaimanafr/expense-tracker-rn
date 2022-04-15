@@ -28,7 +28,7 @@ function ManageExpense({ route, navigation }) {
 
   function confirmHandler() {
     if (isEditing) {
-      expensesCtx.updateExpense({
+      expensesCtx.updateExpense(editedExpenseId, {
         description: "McD 2x",
         amount: 29.99,
         date: new Date("2022-04-13"),
