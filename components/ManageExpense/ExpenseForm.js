@@ -25,7 +25,6 @@ function ExpenseForm() {
         label="Description"
         textInputConfig={{
           multiline: true,
-          autoCorrect: true,
         }}
       />
     </View>
