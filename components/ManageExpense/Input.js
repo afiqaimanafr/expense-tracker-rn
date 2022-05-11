@@ -15,7 +15,7 @@ export default Input;
 const styles = StyleSheet.create({
   inputContainer: {
     marginHorizontal: 4,
-    marginVertical: 16,
+    marginVertical: 8,
   },
   label: {
     fontSize: 12,
@@ -28,5 +28,9 @@ const styles = StyleSheet.create({
     padding: 6,
     borderRadius: 6,
     fontSize: 18,
+  },
+  inputMultiline: {
+    minHeight: 100,
+    textAlignVertical: "top",
   },
 });
