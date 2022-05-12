@@ -6,9 +6,18 @@ import { getFormattedDate } from "../../util/date";
 
 function ExpenseForm({ submitButtonLabel, onCancel, onSubmit, defaultValues }) {
   const [inputValues, setInputValues] = useState({
-    amount: defaultValues ? defaultValues.amount.toString() : "",
-    date: defaultValues ? getFormattedDate(defaultValues.date) : "",
-    description: defaultValues ? defaultValues.description : "",
+    amount: {
+      value: defaultValues ? defaultValues.amount.toString() : "",
+      isValid: defaultValues ? true : false,
+    },
+    date: {
+      value: defaultValues ? getFormattedDate(defaultValues.date) : "",
+      isValid: defaultValues ? true : false,
+    },
+    description: {
+      value: defaultValues ? defaultValues.description : "",
+      isValid: defaultValues ? true : false,
+    },
   });
 
   function inputChangedHandler(inputIdentifier, enteredValue) {
