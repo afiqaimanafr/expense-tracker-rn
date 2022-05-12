@@ -22,6 +22,8 @@ function ExpenseForm({ submitButtonLabel, onCancel, onSubmit }) {
       date: new Date(inputValues.date),
       description: inputValues.description,
     };
+
+    onSubmit(expenseData);
   }
 
   return (

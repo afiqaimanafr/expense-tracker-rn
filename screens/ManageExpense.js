@@ -26,13 +26,9 @@ function ManageExpense({ route, navigation }) {
     navigation.goBack();
   }
 
-  function confirmHandler() {
+  function confirmHandler(expenseData) {
     if (isEditing) {
-      expensesCtx.updateExpense(editedExpenseId, {
-        description: "McD 2x",
-        amount: 29.99,
-        date: new Date("2022-04-13"),
-      });
+      expensesCtx.updateExpense(editedExpenseId, expenseData);
     } else {
       expensesCtx.addExpense({
         description: "McD",
