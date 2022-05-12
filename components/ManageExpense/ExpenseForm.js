@@ -3,7 +3,7 @@ import { View, StyleSheet, Text } from "react-native";
 import Input from "./Input";
 import Button from "../UI/Button";
 
-function ExpenseForm() {
+function ExpenseForm({ onCancel, onSubmit }) {
   const [inputValues, setInputValues] = useState({
     amount: "",
     date: "",
@@ -15,6 +15,8 @@ function ExpenseForm() {
       return { ...curInputValues, [inputIdentifier]: enteredValue };
     });
   }
+
+  function submitHandler() {}
 
   return (
     <View style={styles.form}>
@@ -49,10 +51,10 @@ function ExpenseForm() {
         }}
       />
       <View style={styles.buttons}>
-        <Button style={styles.button} mode="flat" onPress={cancelHandler}>
+        <Button style={styles.button} mode="flat" onPress={onCancel}>
           Cancel
         </Button>
-        <Button style={styles.button} onPress={confirmHandler}>
+        <Button style={styles.button} onPress={submitHandler}>
           {isEditing ? "Update" : "Add"}
         </Button>
       </View>
