@@ -3,7 +3,7 @@ import { View, StyleSheet, Text } from "react-native";
 import Input from "./Input";
 import Button from "../UI/Button";
 
-function ExpenseForm({ onCancel, onSubmit }) {
+function ExpenseForm({ submitButtonLabel, onCancel, onSubmit }) {
   const [inputValues, setInputValues] = useState({
     amount: "",
     date: "",
@@ -55,7 +55,7 @@ function ExpenseForm({ onCancel, onSubmit }) {
           Cancel
         </Button>
         <Button style={styles.button} onPress={submitHandler}>
-          {isEditing ? "Update" : "Add"}
+          {submitButtonLabel}
         </Button>
       </View>
     </View>
