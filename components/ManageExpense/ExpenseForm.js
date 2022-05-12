@@ -3,10 +3,16 @@ import { View, StyleSheet, Text } from "react-native";
 import Input from "./Input";
 
 function ExpenseForm() {
-  const [amountValue, setAmountValue] = useState("");
+  const [inputValues, setInputValues] = useState({
+    amount: "",
+    date: "",
+    description: "",
+  });
 
-  function amountChangedHandler(enteredAmount) {
-    setAmountValue(enteredAmount);
+  function inputChangedHandler(inputIdentifier, enteredValue) {
+    setInputValues((curInputValues) => {
+      return { ...curInputValues, [inputIdentifier]: enteredValue };
+    });
   }
 
   return (
