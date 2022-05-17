@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { View, StyleSheet, Text, Alert } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
+
 import Input from "./Input";
 import Button from "../UI/Button";
 import { getFormattedDate } from "../../util/date";
@@ -36,12 +37,13 @@ function ExpenseForm({ submitButtonLabel, onCancel, onSubmit, defaultValues }) {
       date: new Date(inputs.date.value),
       description: inputs.description.value,
     };
+
     const amountIsValid = !isNaN(expenseData.amount) && expenseData.amount > 0;
     const dateIsValid = expenseData.date.toString() !== "Invalid Date";
     const descriptionIsValid = expenseData.description.trim().length > 0;
 
     if (!amountIsValid || !dateIsValid || !descriptionIsValid) {
-      // Alert.alert("Invalid input", "Please check your input values");
+      // Alert.alert('Invalid input', 'Please check your input values');
       setInputs((curInputs) => {
         return {
           amount: { value: curInputs.amount.value, isValid: amountIsValid },
@@ -52,6 +54,7 @@ function ExpenseForm({ submitButtonLabel, onCancel, onSubmit, defaultValues }) {
           },
         };
       });
+      return;
     }
 
     onSubmit(expenseData);
@@ -93,6 +96,8 @@ function ExpenseForm({ submitButtonLabel, onCancel, onSubmit, defaultValues }) {
         invalid={!inputs.description.isValid}
         textInputConfig={{
           multiline: true,
+          // autoCapitalize: 'none'
+          // autoCorrect: false // default is true
           onChangeText: inputChangedHandler.bind(this, "description"),
           value: inputs.description.value,
         }}
@@ -117,7 +122,9 @@ function ExpenseForm({ submitButtonLabel, onCancel, onSubmit, defaultValues }) {
 export default ExpenseForm;
 
 const styles = StyleSheet.create({
-  form: { marginTop: 20 },
+  form: {
+    marginTop: 40,
+  },
   title: {
     fontSize: 24,
     fontWeight: "bold",
