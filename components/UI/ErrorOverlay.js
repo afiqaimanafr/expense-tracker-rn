@@ -1,4 +1,5 @@
 import { View, Text, StyleSheet } from "react-native";
+import { Button } from "./Button";
 import { GlobalStyles } from "../../constants/styles";
 
 function ErrorOverlay({ message }) {
@@ -6,6 +7,7 @@ function ErrorOverlay({ message }) {
     <View style={styles.container}>
       <Text>An error occured!</Text>
       <Text>{message}</Text>
+      <Button>Okay</Button>
     </View>
   );
 }
