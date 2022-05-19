@@ -6,9 +6,9 @@ import { getDateMinusDays } from "../util/date";
 import { fetchExpenses } from "../util/http";
 
 function RecentExpenses() {
-  // const expensesCtx = useContext(ExpensesContext);
+  const expensesCtx = useContext(ExpensesContext);
 
-  const [fetchedExpenses, setFetchedExpenses] = useState([]);
+  // const [fetchedExpenses, setFetchedExpenses] = useState([]);
 
   useEffect(() => {
     async function getExpenses() {
