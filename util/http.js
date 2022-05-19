@@ -19,5 +19,8 @@ export async function fetchExpenses() {
       date: new Date(response.data[key].date),
       description: response.data[key].description,
     };
+    expenses.push(expenseObj);
   }
+
+  return expenses;
 }
