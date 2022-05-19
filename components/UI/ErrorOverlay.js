@@ -1,10 +1,11 @@
-import { View, ActivityIndicator, StyleSheet } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import { GlobalStyles } from "../../constants/styles";
 
-function ErrorOverlay() {
+function ErrorOverlay({ message }) {
   return (
     <View style={styles.container}>
-      <ActivityIndicator size="large" color="white" />
+      <Text>An error occured!</Text>
+      <Text>{message}</Text>
     </View>
   );
 }
